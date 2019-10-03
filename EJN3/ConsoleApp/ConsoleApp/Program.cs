@@ -6,8 +6,6 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            int[] numeros = new int[100];
-            char[] operadores = new char[100];
             int seleccion = 0; 
             String mensajeAlOperador = "";
 
@@ -59,7 +57,16 @@ namespace ConsoleApp
 
         private static void CalcularExpresion()
         {
-            Console.WriteLine("Calculadora");
+            int[] numeros = new int[100];
+            char[] operadores = new char[100];
+            String ecuacion = "";
+            String mensajeAlOperador = "Escriba su ecuación:\n" +
+                "=> ";
+
+            Console.WriteLine(mensajeAlOperador);
+            ecuacion = Console.ReadLine();
+
+            Console.WriteLine($"Su ecuación es: {ecuacion}");
         }
     }
 }
