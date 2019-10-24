@@ -94,11 +94,63 @@ namespace Calculadora
         
     }
 
-    class Calculadora
+    public class Ingreso
     {
-        Calculadora()
+        public float NuevoIngreso(string ingreso)
         {
-
+            float x = float.Parse(ingreso);
+            return x;
         }
     }
+    public class Calculadora
+    {
+        float mantisa = 0;
+        string operacion = "";
+
+        public void IngresarNumero(float numero)
+        {
+            if (operacion == "")
+                mantisa = numero;
+
+            if (operacion == "+")
+                mantisa += numero;
+
+            if (operacion == "-")
+                mantisa -= numero;
+
+            if (operacion == "*")
+                mantisa *= numero;
+
+            if (operacion == "/" && numero != 0)
+            {
+                mantisa /= numero;
+            }
+            else if (operacion == "/" && numero == 0)
+            {
+                Console.WriteLine("ingrese un nro distinto de cero como divisor");
+            }
+        }
+        public void Mas()
+        {
+            operacion = "+";
+        }
+        public void Menos()
+        {
+            operacion = "-";
+        }
+        public void Multiplicacion()
+        {
+            operacion = "*";
+        }
+        public void Division()
+        {
+            operacion = "/";
+        }
+
+        public float GetResultado()
+        {
+            return mantisa;
+        }
+    }
+
 }
