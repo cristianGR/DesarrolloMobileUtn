@@ -30,7 +30,8 @@ namespace Calculadora
             pila.Padding = 5;
             pila.Margin = 0;
             
-
+            //En esta parte tienen que cambiar el height y el width para su telefono 
+            //(lo cual esta mal porque mejor hacerlo con posiciones relativas), pero por ahora tengo esto.
             //definición de filas
             grilla.RowDefinitions.Add(new RowDefinition { Height = new GridLength(130)});
             grilla.RowDefinitions.Add(new RowDefinition { Height = new GridLength(130)});
